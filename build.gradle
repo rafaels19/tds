@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.5.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'tds.project'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-hateoas'
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.session:spring-session-core'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testImplementation 'org.springframework.security:spring-security-test'
+	
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	implementation group: 'org.springdoc', name: 'springdoc-openapi-ui', version: '1.4.4'
+	
+	// https://mvnrepository.com/artifact/com.vladmihalcea/hibernate-types-52
+	implementation group: 'com.vladmihalcea', name: 'hibernate-types-52', version: '1.0.0'
+
+}
