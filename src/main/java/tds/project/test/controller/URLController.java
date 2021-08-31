@@ -42,7 +42,7 @@ public class URLController {
 	}
 	
 	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST, consumes = "application/json", produces = "application/json")
-	public ResponseEntity<Object> cadastrarUrl(@RequestParam(required=false) String urlOriginal) {
+	public ResponseEntity<Object> cadastrarUrl(@RequestParam(required=true) String urlOriginal) {
 		
 		this.urlService.cadastrarUrl(urlOriginal);
 		
